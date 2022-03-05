@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body style="background-color:grey">
+    <nav class="navbar">
+        <ul>
+            <li><a href="#Myself">Home </a></li>
+            <li><a href="#About_Me">About_Me </a></li>
+            <li><a href="#Education">Education</a></li>
+            <li><a href="#ContactMe">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="Home">
+        <h1>HELLO EVERYONE</h1>
+        <h1>THIS IS </h1>
+        <h1>RUTHRA MOORTHY</h1>
+    </section>
+
+
+    <section id="About_Me">
+        <h2 class="About">ABOUT ME</h2>
+        <div id="Pic">
+            <img src="photo-1529665253569-6d01c0eaf7b6.jpg" alt="My_Picture">
+            <div id="bio">
+                <p style="font-size: 30px;"> Hi,This is my first project,I am a college student,I am currently studying 2nd year.</p>
+                <p style="font-size: 30px;">I am a quick learner who got motivate,when learning something </p>
+                <p style="font-size: 30px;"> I am just getting started as a programmer and web developer,Now I am looking for Internship in field of Web develment. </p>
+            </div>
+        </div>
+    </section>
+    <section id="Education">
+        <div id="edu">
+            <div class="About">
+                <h2>Education</h2>
+            </div>
+            <div id="E">
+                <p>10th Mark-82%</p>
+                <p>12th Mark-79%</p>
+                <p>"Currently pursuing B.E,CSE degree in Velammal Engineering College 2nd year</p>
+            </div>
+            <div id="F">
+                <p>Completed courses:</p>
+                <ol>
+                    <li>Html</li>
+                    <li>css</li>
+                    <li>c</li>
+                    <li>C++</li>
+                </ol>
+            </div>
+            <div id="G">
+                <p>And Currently studying:</p>
+                <ol>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section id="ContactMe">
+        <div class="Contact">
+            <h2 style="margin: 0px; padding: 0px;">CONTACT</h2>
+        </div>
+        <div id="H">
+            <h2 style="color: azure;">Contact Details</h2>
+            <br>
+            <form action="https://formspree.io/f/xgedylbr" method="post" id="my-form">
+                <p style="color: white;">Name:</p>
+                <label for="Name"></label>
+                <input type="text" name="name" id="name"
+                    placeholder="Enter Your Name Please" />
+                <br>
+                <p style="color: white;">Email:</p>
+                <label for="email"></label>
+                <input type="text" name="email" id="email"
+                    placeholder="Enter Your Email Please" />
+                <p style="color: white;">Description:</p>
+                <textarea name="Description" id="" cols="30" rows="10"
+                    placeholder="FeedBack on My PortFolio"></textarea>
+                <br>
+                <button>Submit</button>
+            </form>
+        </div>
+        <br>
+      
+        <div id="N">
+            <a href="https://www.linkedin.com/in/ruthra-moorthy-k-084104214"> <i class="fa-brands fa-linkedin"></i> </a>
+            <a href="https://www.instagram.com/invites/contact/?i=mecdrtzzik85&utm_content=iiztjjj" target="_blank"> <i
+                    class="fa-brands fa-instagram"></i> </a>
+            <a href="https://www.hackerrank.com/@Jhonmoorthi85131"> <i class="fa-brands fa-hackerrank"></i> </a>
+            <a href="https://github.com/John12356"> <i class="fab fa-github"></i> </a>
+        </div>
+    </section>
+    <div class="footer">
+    <p style="text-align: center; color: black; font-size: 30px; ">CopyRights&copy;2022</p>
+    <p style="text-align: center; color: black; font-size: 30px;">Ruthra Moorthy</p>
+</div>
+
+    <script>
+        // contact page to mail[Start]
+
+var form = document.getElementById("my-form");
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+        form.reset()
+        alert("Thanks for your submission!");
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+            alert(data["errors"].map(error => error["message"]).join(", "));
+        } else {
+            alert("Oops! There was a problem in submitting your form");
+        }
+      })
+    }
+  }).catch(error => {
+    alert("Oops! There was a problem in submitting your form");
+  });
+}
+form.addEventListener("submit", handleSubmit);
+
+// contact page to mail[end]
+    </script>
+
+</body>
+
+</html>
